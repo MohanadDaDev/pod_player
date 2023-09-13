@@ -127,7 +127,8 @@ class _PodVideoQualityController extends _PodVideoController {
       podVideoStateChanger(PodVideoState.paused);
       podVideoStateChanger(PodVideoState.loading);
       playingVideoUrl = _videoQualityUrl;
-      _videoCtr = VideoPlayerController.networkUrl(Uri.parse(_videoQualityUrl));
+      _videoCtr =
+          CachedVideoPlayerController.network(_videoQualityUrl);
       await _videoCtr?.initialize();
       _videoDuration = _videoCtr?.value.duration ?? Duration.zero;
       _videoCtr?.addListener(videoListner);

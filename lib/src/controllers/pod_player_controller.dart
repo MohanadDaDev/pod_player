@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as uni_html;
@@ -104,7 +105,7 @@ class PodPlayerController {
 
   PodVideoState get videoState => _ctr.podVideoState;
 
-  VideoPlayerValue? get videoPlayerValue => _ctr.videoCtr?.value;
+  CachedVideoPlayerValue? get videoPlayerValue => _ctr.videoCtr?.value;
 
   PodVideoPlayerType get videoPlayerType => _ctr.videoPlayerType;
 

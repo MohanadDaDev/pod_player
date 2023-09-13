@@ -1,7 +1,8 @@
 /// Pod Player library
 library pod_player;
 
-export 'package:video_player/video_player.dart';
+// export 'package:video_player/video_player.dart';
+export 'package:cached_video_player/cached_video_player.dart';
 
 export 'src/controllers/pod_player_controller.dart';
 export 'src/models/overlay_options.dart';
