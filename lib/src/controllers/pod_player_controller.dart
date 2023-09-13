@@ -107,6 +107,8 @@ class PodPlayerController {
 
   CachedVideoPlayerValue? get videoPlayerValue => _ctr.videoCtr?.value;
 
+  CachedVideoPlayerController? get videoPlayerCon => _ctr.videoCtr;
+
   PodVideoPlayerType get videoPlayerType => _ctr.videoPlayerType;
 
   // Future<void> initialize() async => _ctr.videoCtr?.initialize;
@@ -130,6 +132,10 @@ class PodPlayerController {
   /// toogle play and pause
   void togglePlayPause() {
     isVideoPlaying ? pause() : play();
+  }
+
+  void setPlaybackSpeed(double speed) {
+    _ctr.setVideoPlayBack(speed == 1 ? 'Normal' : '${speed}x');
   }
 
   /// Listen to changes in video.
