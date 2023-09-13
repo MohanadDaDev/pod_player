@@ -20,6 +20,7 @@ class _MobileOverlay extends StatelessWidget {
           child: ColoredBox(
             color: overlayColor,
             child: Row(
+              textDirection: TextDirection.ltr,
               children: [
                 Expanded(
                   child: DoubleTapIcon(
