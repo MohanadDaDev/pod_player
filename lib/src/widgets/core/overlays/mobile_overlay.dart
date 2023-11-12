@@ -88,6 +88,7 @@ class _MobileOverlay extends StatelessWidget {
   }
 
   bool _isRtl() {
+    return false;
     final Locale locale = WidgetsBinding.instance.platformDispatcher.locale;
     final langs = [
       'ar', // Arabic
