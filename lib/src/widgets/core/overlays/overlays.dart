@@ -18,8 +18,8 @@ class _VideoOverlays extends StatelessWidget {
           tag: tag,
           id: 'overlay',
           builder: (podCtr) {
-            return AnimatedOpacity(
-              duration: const Duration(milliseconds: 200),
+            return AnimatedOpacity( 
+              duration: const Duration(milliseconds: 150),
               opacity: podCtr.isOverlayVisible ? 1 : 0,
               child: Stack(
                 fit: StackFit.passthrough,

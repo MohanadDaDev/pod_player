@@ -124,7 +124,7 @@ class _PodVideoController extends _PodUiController {
       update(['overlay']);
       update(['update-all']);
       showOverlayTimer?.cancel();
-      showOverlayTimer = Timer(const Duration(seconds: 3), () {
+      showOverlayTimer = Timer(const Duration(milliseconds: 300), () {
         if (isOverlayVisible) {
           isOverlayVisible = false;
           update(['overlay']);
@@ -134,7 +134,7 @@ class _PodVideoController extends _PodUiController {
     }
   }
 
-  void setVideoPlayBack(String speed) {
+  Future<void> setVideoPlayBack(String speed) async {
     late double pickedSpeed;
 
     if (speed == 'Normal') {
@@ -144,7 +144,7 @@ class _PodVideoController extends _PodUiController {
       pickedSpeed = double.parse(speed.split('x').first);
       _currentPaybackSpeed = speed;
     }
-    _videoCtr?.setPlaybackSpeed(pickedSpeed);
+    return _videoCtr?.setPlaybackSpeed(pickedSpeed);
   }
 
   Future<void> setLooping(bool isLooped) async {
@@ -206,7 +206,7 @@ class _PodVideoController extends _PodUiController {
               SystemUiMode.manual,
               overlays: SystemUiOverlay.values,
             ),
-          ]
+          ],
         ]);
       }
 

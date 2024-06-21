@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cached_video_player/cached_video_player.dart';
+import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:universal_html/html.dart' as uni_html;
@@ -105,9 +105,9 @@ class PodPlayerController {
 
   PodVideoState get videoState => _ctr.podVideoState;
 
-  CachedVideoPlayerValue? get videoPlayerValue => _ctr.videoCtr?.value;
+  CachedVideoPlayerPlusValue? get videoPlayerValue => _ctr.videoCtr?.value;
 
-  CachedVideoPlayerController? get videoPlayerCon => _ctr.videoCtr;
+  CachedVideoPlayerPlusController? get videoPlayerCon => _ctr.videoCtr;
 
   PodVideoPlayerType get videoPlayerType => _ctr.videoPlayerType;
 
@@ -134,8 +134,8 @@ class PodPlayerController {
     isVideoPlaying ? pause() : play();
   }
 
-  void setPlaybackSpeed(double speed) {
-    _ctr.setVideoPlayBack(speed == 1 ? 'Normal' : '${speed}x');
+  Future<void> setPlaybackSpeed(double speed) async{
+    return _ctr.setVideoPlayBack(speed == 1 ? 'Normal' : '${speed}x');
   }
 
   /// Listen to changes in video.

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,7 @@ part 'pod_video_quality_controller.dart';
 
 class PodGetXVideoController extends _PodGesturesController {
   ///main videoplayer controller
-  CachedVideoPlayerController? get videoCtr => _videoCtr;
+  CachedVideoPlayerPlusController? get videoCtr => _videoCtr;
 
   ///podVideoPlayer state notifier
   PodVideoState get podVideoState => _podVideoState;
@@ -86,8 +85,8 @@ class PodGetXVideoController extends _PodGesturesController {
       case PodVideoPlayerType.network:
 
         ///
-        _videoCtr = CachedVideoPlayerController.network(
-          playVideoFrom.dataSource!,
+        _videoCtr = CachedVideoPlayerPlusController.networkUrl(
+          Uri.parse(playVideoFrom.dataSource!),
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           formatHint: playVideoFrom.formatHint,
           videoPlayerOptions: playVideoFrom.videoPlayerOptions,
@@ -102,8 +101,8 @@ class PodGetXVideoController extends _PodGesturesController {
         );
 
         ///
-        _videoCtr = CachedVideoPlayerController.network(
-          url,
+        _videoCtr = CachedVideoPlayerPlusController.networkUrl(
+          Uri.parse(url),
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           formatHint: playVideoFrom.formatHint,
           videoPlayerOptions: playVideoFrom.videoPlayerOptions,
@@ -123,8 +122,8 @@ class PodGetXVideoController extends _PodGesturesController {
         );
 
         ///
-        _videoCtr = CachedVideoPlayerController.network(
-          url,
+        _videoCtr = CachedVideoPlayerPlusController.networkUrl(
+          Uri.parse(url),
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           formatHint: playVideoFrom.formatHint,
           videoPlayerOptions: playVideoFrom.videoPlayerOptions,
@@ -143,8 +142,8 @@ class PodGetXVideoController extends _PodGesturesController {
           videoUrls: vimeoOrVideoUrls,
         );
 
-        _videoCtr = CachedVideoPlayerController.network(
-          url,
+        _videoCtr = CachedVideoPlayerPlusController.networkUrl(
+          Uri.parse(url),
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           formatHint: playVideoFrom.formatHint,
           videoPlayerOptions: playVideoFrom.videoPlayerOptions,
@@ -156,7 +155,7 @@ class PodGetXVideoController extends _PodGesturesController {
       case PodVideoPlayerType.asset:
 
         ///
-        _videoCtr = CachedVideoPlayerController.asset(
+        _videoCtr = CachedVideoPlayerPlusController.asset(
           playVideoFrom.dataSource!,
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           package: playVideoFrom.package,
@@ -171,7 +170,7 @@ class PodGetXVideoController extends _PodGesturesController {
         }
 
         ///
-        _videoCtr = CachedVideoPlayerController.file(
+        _videoCtr = CachedVideoPlayerPlusController.file(
           playVideoFrom.file!,
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           videoPlayerOptions: playVideoFrom.videoPlayerOptions,
@@ -188,8 +187,8 @@ class PodGetXVideoController extends _PodGesturesController {
           videoUrls: vimeoOrVideoUrls,
         );
 
-        _videoCtr = CachedVideoPlayerController.network(
-          url,
+        _videoCtr = CachedVideoPlayerPlusController.networkUrl(
+          Uri.parse(url),
           closedCaptionFile: playVideoFrom.closedCaptionFile,
           formatHint: playVideoFrom.formatHint,
           videoPlayerOptions: playVideoFrom.videoPlayerOptions,
