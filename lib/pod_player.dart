@@ -1,9 +1,9 @@
 /// Pod Player library
 library pod_player;
 
-// export 'package:video_player/video_player.dart';
+export 'package:video_player/video_player.dart';
 // export 'package:cached_video_player/cached_video_player.dart';
-export 'package:cached_video_player_plus/cached_video_player_plus.dart';
+// export 'package:cached_video_player_plus/cached_video_player_plus.dart';
 
 
 export 'src/controllers/pod_player_controller.dart';

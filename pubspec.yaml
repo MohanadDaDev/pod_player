@@ -13,14 +13,16 @@ dependencies:
   #   git:
   #     url: https://github.com/vikram25897/flutter_cached_video_player.git
   #     ref: feature/gradle_version_bump
-  cached_video_player_plus: ^3.0.2
+  # cached_video_player_plus:
+  #   git: https://github.com/justcoding-ys/cached_video_player_plus.git
+  video_player: ^2.9.5
   flutter:
     sdk: flutter
   get: ^4.6.5
   http: ^1.1.0
   universal_html: ^2.2.3
   # video_player: ^2.7.0
-  wakelock_plus: ^1.1.1
+  wakelock_plus: ^1.3.2
   youtube_explode_dart:
     git: https://github.com/MohanadDaDev/youtube_explode_dart.git
 

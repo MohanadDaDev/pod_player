@@ -1,8 +1,8 @@
-import 'package:cached_video_player_plus/cached_video_player_plus.dart';
+// import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
-// import 'package:video_player/video_player.dart';
+import 'package:video_player/video_player.dart';
 
 import '../controllers/pod_getx_video_controller.dart';
 import '../models/pod_progress_bar_config.dart';
@@ -33,7 +33,7 @@ class PodProgressBar extends StatefulWidget {
 
 class _PodProgressBarState extends State<PodProgressBar> {
   late final _podCtr = Get.find<PodGetXVideoController>(tag: widget.tag);
-  late CachedVideoPlayerPlusValue? videoPlayerValue = _podCtr.videoCtr?.value;
+  late VideoPlayerValue? videoPlayerValue = _podCtr.videoCtr?.value;
   bool _controllerWasPlaying = false;
 
   void seekToRelativePosition(Offset globalPosition) {
@@ -147,7 +147,7 @@ class _PodProgressBarState extends State<PodProgressBar> {
 class _ProgressBarPainter extends CustomPainter {
   _ProgressBarPainter(this.value, {this.podProgressBarConfig});
 
-  CachedVideoPlayerPlusValue value;
+  VideoPlayerValue value;
   PodProgressBarConfig? podProgressBarConfig;
 
   @override
